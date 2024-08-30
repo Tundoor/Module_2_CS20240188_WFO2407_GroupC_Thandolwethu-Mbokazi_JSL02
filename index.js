@@ -15,30 +15,21 @@ const displayWorkoutRoutine = () => {
 document.querySelector('#submitWorkout').addEventListener('click', displayWorkoutRoutine);
 
 
-const goalCheck = []   // created array
+const goalCheck = []   // makes array so we can use includes element
 const addNewGoal = () => {
     const goalInput = document.querySelector('#goalInput').value;
     const goalList = document.querySelector('#goalList');
     
-    if (goalCheck.includes(goalInput)) {
+    if (goalCheck.includes(goalInput)) {        // Alert shows if goal is there
         alert('Goal Already Exists!')
         return;
     }
     
-    // ⚠️ Hint 2: Prevent duplicates
-    // If a duplicate is found, display an alert to the user and don't add the goal to the list.
-    // If it's not a duplicate, proceed with adding it as a new goal.
-    
-    // ⚠️ Hint 3: Code structure
-    // You might want to wrap the duplicate-checking logic in an 'if' statement.
-    
-    // ⚠️ Hint 4: Event listener
-    // The event listener that removes goals when clicked is not related to this issue.
-    // Focus on preventing duplicates for now.
-   
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
+    goalCheck.push(goalInput)
+
 };
 
 // Add event listener to the goal submit button
