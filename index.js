@@ -17,7 +17,7 @@ document.querySelector('#submitWorkout').addEventListener('click', displayWorkou
 
 const goalCheck = []   // makes array so we can use includes element
 const addNewGoal = () => {
-    const goalInput = document.querySelector('#goalInput').value;
+    const goalInput = document.querySelector('#goalInput').value.toLowerCase();
     const goalList = document.querySelector('#goalList');
     
     if (goalCheck.includes(goalInput)) {        // Alert shows if goal is there
